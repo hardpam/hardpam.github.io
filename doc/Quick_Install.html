@@ -1,0 +1,239 @@
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:t="http://ocaml.org/xmlns/template#">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <title>OPAM -  Quick Install </title>
+    <link href="/blog/feed.xml" type="application/atom+xml" rel="alternate" title="Platform blog ATOM Feed"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="The homepage of OPAM, a package manager for OCaml"/>
+    <meta name="author" content="OCamlPro"/>
+    <link rel="icon" type="image/png" href="/ext/img/favicon.png"/>
+    <link rel="stylesheet" href="/ext/css/bootstrap.css"/>
+    <link rel="stylesheet" href="/ext/css/docs.css"/>
+    <link rel="stylesheet" href="/ext/js/google-code-prettify/prettify.css"/>
+    <link rel="stylesheet" href="/ext/css/site.css"/>
+    <link rel="stylesheet" href="/ext/css/bootstrap-responsive.css"/>
+    
+      <link href="../ext/css/opam2web.css" type="text/css" rel="stylesheet"/>
+      <meta name="generator" content="opam2web 1.2.0-277-g7fa8613"/>
+    
+    
+    
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"> </span>
+            <span class="icon-bar"> </span>
+            <span class="icon-bar"> </span>
+          </a>
+          <a class="brand" href="https://github.com/ocaml/opam">OPAM on Github</a>
+          <div class="nav-collapse collapse">
+            
+    <ul class="nav">
+       <li class=""><a href="../.">OPAM</a></li>  <li class=""><a href="../packages/">Repository</a></li> 
+        <li class="dropdown active">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            Documentation <b class="caret"> </b>
+          </a>
+          <ul class="dropdown-menu">
+               <li class="nav-header">Primer</li>  <li class="active"><a href="../doc/Quick_Install.html">Quick Install</a></li>  <li class=""><a href="../doc/Basic_Usage.html">Basic Usage</a></li>  <li class=""><a href="../doc/Specifying_Solver_Preferences.html">Specifying Solver Preferences</a></li>  <li class=""><a href="../doc/FAQ.html">FAQ</a></li>  <li class="divider"></li>  <li class="nav-header">Go Further</li>  <li class=""><a href="../doc/Advanced_Install.html">Advanced Install</a></li>  <li class=""><a href="../doc/Advanced_Usage.html">Advanced Usage</a></li>  <li class=""><a href="../doc/Developing.html">Developing</a></li>  <li class="divider"></li>  <li class="nav-header">For Packagers</li>  <li class=""><a href="../doc/Packaging.html">Packaging</a></li>  <li class="divider"></li>  <li class=""><a href="/doc/1.1/">Archives (OPAM 1.1)</a></li> 
+          </ul>
+        </li>
+       <li class=""><a href="../about.html">About OPAM</a></li>  
+    </ul>
+  
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="wrap">
+    <div id="main" class="container clear-top">
+
+      
+          <div class="row">
+            <div class="span3">
+          <div class="bs-docs-menu hidden-phone">
+            
+      <ul class="nav nav-pills nav-stacked">
+        
+            <li class="disabled">
+              <a href="#"><strong>Primer</strong></a>
+            </li>
+          <li class="active">
+            <a href="Quick_Install.html"> Quick Install</a>
+          </li><li class="">
+            <a href="Basic_Usage.html"> Basic Usage</a>
+          </li><li class="">
+            <a href="Specifying_Solver_Preferences.html"> Specifying Solver Preferences</a>
+          </li><li class="">
+            <a href="FAQ.html"> FAQ</a>
+          </li><li class="disabled divider"><a href="#"> </a></li>
+            <li class="disabled">
+              <a href="#"><strong>Go Further</strong></a>
+            </li>
+          <li class="">
+            <a href="Advanced_Install.html"> Advanced Install</a>
+          </li><li class="">
+            <a href="Advanced_Usage.html"> Advanced Usage</a>
+          </li><li class="">
+            <a href="Developing.html"> Developing</a>
+          </li><li class="disabled divider"><a href="#"> </a></li>
+            <li class="disabled">
+              <a href="#"><strong>For Packagers</strong></a>
+            </li>
+          <li class="">
+            <a href="Packaging.html"> Packaging</a>
+          </li><li class="disabled divider"><a href="#"> </a></li>
+      </ul>
+    
+            <div class="bs-docs-toc">
+              <ul><li><a href="#InstallingOPAMwithyourdistribution">Installing OPAM with your distribution</a>
+<ul><li><a href="#Archlinux">Archlinux</a>
+</li><li><a href="#Debian">Debian</a>
+</li><li><a href="#Exherbo">Exherbo</a>
+</li><li><a href="#Mageia">Mageia</a>
+</li><li><a href="#OSX">OSX</a>
+</li><li><a href="#UbuntuPreciseQuantalRaringandSaucy">Ubuntu (Precise, Quantal, Raring and Saucy)</a>
+</li><li><a href="#UbuntuTrustyLTS">Ubuntu Trusty LTS</a>
+</li></ul>
+</li><li><a href="#Binaryinstaller">Binary installer</a>
+</li><li><a href="#FromSources">From Sources</a>
+<ul><li><a href="#GettingtheSources">Getting the Sources</a>
+</li><li><a href="#Usingocamlbrew">Using ocamlbrew</a>
+</li></ul>
+</li></ul>
+            </div>
+          </div>
+          </div>
+          <div class="span9">
+          
+          <h1 id="InstallOPAMin2minutes">Install OPAM in 2 minutes</h1>
+
+<p>This page describes how to install and configure OPAM.
+For further help on how to use OPAM, either read
+<code>opam --help</code> or move on to the <a href="Basic_Usage.html">Basic Usage</a> guide.</p>
+<h2 id="InstallingOPAMwithyourdistribution">Installing OPAM with your distribution</h2>
+
+<p>You can use the OPAM package of your distribution if
+available. Here is a list of supported distributions:</p>
+<h4 id="Archlinux">Archlinux</h4>
+
+<p>The <a href="http://aur.archlinux.org/packages.php?ID=62127">opam</a> and <a href="http://aur.archlinux.org/packages.php?ID=62387">opam-git</a> packages are available in the <a href="https://wiki.archlinux.org/index.php/AUR">AUR</a>. Replace <code>opam</code> with <code>opam-git</code> in the following instruction to get the development version:</p>
+<pre><code>  yaourt -S opam</code></pre>
+
+<h4 id="Debian">Debian</h4>
+
+<p>Binary packages of OPAM 1.1.1 are available for the <a href="http://packages.debian.org/jessie/opam">testing</a> and <a href="http://packages.debian.org/sid/opam">unstable</a> distributions.  Wheezy users are left with the options of compiling from source, pinning the packages from the testing repository, requesting a backport from Debian, or using our binary installer below.</p>
+<h4 id="Exherbo"><a href="http://exherbo.org">Exherbo</a></h4>
+
+<p>Simply install the <a href="http://git.exherbo.org/summer/packages/dev-ocaml/opam/index.html"><code>dev-ocaml/opam</code></a> package: <code>cave resolve -x dev-opam/ocaml</code>.<br/>You might need to add the <code>::ocaml-unofficial</code> repository first: <code>cave resolve -x repository/ocaml-unofficial</code>.</p>
+<h4 id="Mageia">Mageia</h4>
+
+<p>The opam package for Mageia can be installed with the command:</p>
+<pre><code>  urpmi opam</code></pre>
+
+<h4 id="OSX">OSX</h4>
+
+<p>OPAM packages for <a href="http://mxcl.github.com/homebrew/">homebrew</a> and <a href="http://www.macports.org/">MacPorts</a> are available:</p>
+<pre><code>  brew install opam                   # using Homebrew on OSX Mavericks
+  brew install opam --without-aspcud  # using Homebrew on OSX Mountain Lion (or lower)
+  port install opam                   # using MacPort</code></pre>
+
+<p>See also <a href="https://github.com/ocaml/opam/wiki/Setup-Emacs.app-on-macosx-for-opam-usage">howto setup Emacs.app</a> for opam usage.</p>
+<h4 id="UbuntuPreciseQuantalRaringandSaucy">Ubuntu (Precise, Quantal, Raring and Saucy)</h4>
+
+<pre><code>  add-apt-repository ppa:avsm/ppa
+  apt-get update
+  apt-get install ocaml opam</code></pre>
+
+<p>There are also PPAs available that are <a href="http://launchpad.net/~avsm">pinned to specific revisions</a> of OCaml and OPAM to help with <a href="http://anil.recoil.org/2013/09/30/travis-and-ocaml.html">automated testing</a>.</p>
+<p>If the command <code>add-apt-repository</code> is not available, you can install the package <code>python-software-properties</code> with <code>apt-get install python-software-properties</code>. Alternatively, you may manually edit the file <code>/etc/apt/sources.list</code> to add the PPA for your Ubuntu release.</p>
+<h4 id="UbuntuTrustyLTS">Ubuntu Trusty LTS</h4>
+
+<p>OCaml 4.01.0 and OPAM 1.1.1 are included in Ubuntu Trusty's <code>universe</code> repository, so just install them as normal.</p>
+<pre><code>  apt-get update
+  apt-get install ocaml ocaml-native-compilers camlp4-extra opam</code></pre>
+
+<h2 id="Binaryinstaller">Binary installer</h2>
+
+<p>Pre-compiled versions for most common architectures and OSes are available on <a href="https://github.com/ocaml/opam/releases/latest">the Github &quot;releases&quot; page</a>. We also provide a very simple installer script that will automatically download the right version for you, put it in your binary directory and initialize it.</p>
+<pre><code>  wget https://raw.github.com/ocaml/opam/master/shell/opam_installer.sh
+  sh ./opam_installer.sh /usr/local/bin</code></pre>
+
+<p>You can also specify which version of OCaml you want to install:</p>
+<pre><code>  sh ./opam_installer.sh /usr/local/bin 3.12.1 # Install the latest OPAM and OCaml 3.12.1
+  sh ./opam_installer.sh /usr/local/bin system # Install the latest OPAM using the system compiler (if any)</code></pre>
+
+<h2 id="FromSources">From Sources</h2>
+
+<h4 id="GettingtheSources">Getting the Sources</h4>
+
+<p>Sources of the latest stable version of OPAM are available on <a href="https://github.com/ocaml/opam/releases">Github</a>. You can also download the full archives, including OPAM dependencies:</p>
+<ul><li><a href="https://github.com/ocaml/opam/releases/download/1.1.1/opam-full-1.1.1.tar.gz">1.1.1</a> MD5 (opam-full-1.1.1.tar.gz) = a7bebe947b3e6c1c10ccafabb839d374</li><li><a href="http://www.ocamlpro.com/pub/opam-full-1.1.0.tar.gz">1.1.0</a> MD5 (opam-full-1.1.0.tar.gz) = d6e2f56b10c0be73b5677963e6659d24</li></ul>
+
+<p>Once the archive downloaded and extracted, you can then run the usual commands:</p>
+<pre><code>./configure &amp;&amp; make &amp;&amp; make install</code></pre>
+
+<p>See <a href="Advanced_Install.html">Advanced Install</a> guide for more information.</p>
+<h4 id="Usingocamlbrew">Using ocamlbrew</h4>
+
+<p><a href="https://github.com/hcarty/ocamlbrew">ocamlbrew</a> is a script that can bootstrap an OCaml environment including OPAM, from source.  This option does not require an existing OCaml installation, or a pre-compiled OPAM binary for your platform.  To bootstrap a new OCaml environment including OPAM, make sure that you have the necessary pre-requisites installed to run ocamlbrew, and then run:</p>
+<pre><code>curl -kL https://raw.github.com/hcarty/ocamlbrew/master/ocamlbrew-install | env OCAMLBREW_FLAGS=&quot;-r&quot; bash</code></pre>
+          </div>
+        </div>
+      
+
+    </div> 
+    </div> 
+
+    <div class="footer">
+    <div class="icons">
+    <div class="icon">
+      <a href="https://github.com/ocaml/opam2web">
+      <img src="../ext/img/github.png"/>
+      </a>
+    </div>
+    <div class="icon">
+      <a href="http://www.ocamlpro.com/">
+      <img src="../ext/img/ocamlpro.png"/>
+      </a>
+    </div>
+    <div class="icon">
+      <a href="http://www.ocaml.org/">
+      <img src="../ext/img/ocaml.png"/>
+      </a>
+    </div>
+    </div>
+    <div class="copyright">
+      <small>
+      Generated  
+      using <a href="http://github.com/ocaml/opam2web">opam2web</a>,
+      courtesy of <a href="http://ocamlpro.com">OCamlPro</a>.
+      <a href="http://opam.ocamlpro.com">Commercial support</a>.
+      </small>
+    </div>
+  </div>
+
+    
+    
+
+    <script src="/ext/js/google-code-prettify/prettify.js"> </script>
+     <script src="../ext/js/jquery.js"> </script>  <script src="../ext/js/site.js"> </script>  <script src="../ext/js/search.js"> </script> 
+    <script type="text/javascript">
+      var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-22552764-5']); _gaq.push(['_trackPageview']);
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+      </script>
+      
+    <script src="/ext/js/bootstrap.min.js"> </script>
+  </body>
+</html>

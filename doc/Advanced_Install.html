@@ -1,0 +1,239 @@
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:t="http://ocaml.org/xmlns/template#">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <title>OPAM -  Advanced Install </title>
+    <link href="/blog/feed.xml" type="application/atom+xml" rel="alternate" title="Platform blog ATOM Feed"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="The homepage of OPAM, a package manager for OCaml"/>
+    <meta name="author" content="OCamlPro"/>
+    <link rel="icon" type="image/png" href="/ext/img/favicon.png"/>
+    <link rel="stylesheet" href="/ext/css/bootstrap.css"/>
+    <link rel="stylesheet" href="/ext/css/docs.css"/>
+    <link rel="stylesheet" href="/ext/js/google-code-prettify/prettify.css"/>
+    <link rel="stylesheet" href="/ext/css/site.css"/>
+    <link rel="stylesheet" href="/ext/css/bootstrap-responsive.css"/>
+    
+      <link href="../ext/css/opam2web.css" type="text/css" rel="stylesheet"/>
+      <meta name="generator" content="opam2web 1.2.0-277-g7fa8613"/>
+    
+    
+    
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"> </span>
+            <span class="icon-bar"> </span>
+            <span class="icon-bar"> </span>
+          </a>
+          <a class="brand" href="https://github.com/ocaml/opam">OPAM on Github</a>
+          <div class="nav-collapse collapse">
+            
+    <ul class="nav">
+       <li class=""><a href="../.">OPAM</a></li>  <li class=""><a href="../packages/">Repository</a></li> 
+        <li class="dropdown active">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            Documentation <b class="caret"> </b>
+          </a>
+          <ul class="dropdown-menu">
+               <li class="nav-header">Primer</li>  <li class=""><a href="../doc/Quick_Install.html">Quick Install</a></li>  <li class=""><a href="../doc/Basic_Usage.html">Basic Usage</a></li>  <li class=""><a href="../doc/Specifying_Solver_Preferences.html">Specifying Solver Preferences</a></li>  <li class=""><a href="../doc/FAQ.html">FAQ</a></li>  <li class="divider"></li>  <li class="nav-header">Go Further</li>  <li class="active"><a href="../doc/Advanced_Install.html">Advanced Install</a></li>  <li class=""><a href="../doc/Advanced_Usage.html">Advanced Usage</a></li>  <li class=""><a href="../doc/Developing.html">Developing</a></li>  <li class="divider"></li>  <li class="nav-header">For Packagers</li>  <li class=""><a href="../doc/Packaging.html">Packaging</a></li>  <li class="divider"></li>  <li class=""><a href="/doc/1.1/">Archives (OPAM 1.1)</a></li> 
+          </ul>
+        </li>
+       <li class=""><a href="../about.html">About OPAM</a></li>  
+    </ul>
+  
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="wrap">
+    <div id="main" class="container clear-top">
+
+      
+          <div class="row">
+            <div class="span3">
+          <div class="bs-docs-menu hidden-phone">
+            
+      <ul class="nav nav-pills nav-stacked">
+        
+            <li class="disabled">
+              <a href="#"><strong>Primer</strong></a>
+            </li>
+          <li class="">
+            <a href="Quick_Install.html"> Quick Install</a>
+          </li><li class="">
+            <a href="Basic_Usage.html"> Basic Usage</a>
+          </li><li class="">
+            <a href="Specifying_Solver_Preferences.html"> Specifying Solver Preferences</a>
+          </li><li class="">
+            <a href="FAQ.html"> FAQ</a>
+          </li><li class="disabled divider"><a href="#"> </a></li>
+            <li class="disabled">
+              <a href="#"><strong>Go Further</strong></a>
+            </li>
+          <li class="active">
+            <a href="Advanced_Install.html"> Advanced Install</a>
+          </li><li class="">
+            <a href="Advanced_Usage.html"> Advanced Usage</a>
+          </li><li class="">
+            <a href="Developing.html"> Developing</a>
+          </li><li class="disabled divider"><a href="#"> </a></li>
+            <li class="disabled">
+              <a href="#"><strong>For Packagers</strong></a>
+            </li>
+          <li class="">
+            <a href="Packaging.html"> Packaging</a>
+          </li><li class="disabled divider"><a href="#"> </a></li>
+      </ul>
+    
+            <div class="bs-docs-toc">
+              <ul><li><a href="#InstallingOPAM">Installing OPAM</a>
+<ul><li><a href="#InstallingOPAMfromsource">Installing OPAM from source</a>
+<ul><li><a href="#Prerequisites">Prerequisites:</a>
+</li><li><a href="#ObtainingOPAM">Obtaining OPAM</a>
+</li><li><a href="#CompilingOPAM">Compiling OPAM</a>
+<ul><li><a href="#BSDsystems">BSD systems</a>
+</li></ul>
+</li><li><a href="#InstallingOPAM_1">Installing OPAM</a>
+</li></ul>
+</li></ul>
+</li><li><a href="#InitializingOPAM">Initializing OPAM</a>
+<ul><li><a href="#UninstallingOPAM">Uninstalling OPAM</a>
+</li></ul>
+</li></ul>
+            </div>
+          </div>
+          </div>
+          <div class="span9">
+          
+          <h1 id="InstallingOPAM">Installing OPAM</h1>
+
+<p>This tutorial is a complement to the <a href="Quick_Install.html">Quick Install</a>
+tutorial and provides complements on how to install OPAM directly from
+sources. This is <em>not</em> the recommended way of installing OPAM.</p>
+<h2 id="InstallingOPAMfromsource">Installing OPAM from source</h2>
+
+<h3 id="Prerequisites">Prerequisites:</h3>
+
+<ul><li>ocaml (at least 3.12.1)</li><li>curl or wget</li><li>git (optional, to use the git backend)</li><li>rsync (optional, to use the rsync backend)</li></ul>
+
+<h3 id="ObtainingOPAM">Obtaining OPAM</h3>
+
+<p>Download the latest stable version of OPAM <a href="https://github.com/ocaml/opam/archive/latest.tar.gz">here</a>.</p>
+<p>If you want to try the development (unstable) version of OPAM, clone
+ the git repository: <code>git clone
+ git://github.com/ocaml/opam.git</code>. Please keep in mind that this
+ version may not work as expected.</p>
+<h3 id="CompilingOPAM">Compiling OPAM</h3>
+
+<p>To compile opam (binaries will be installed in <code>/usr/local/bin</code>),
+simply run:</p>
+<pre><code>./configure
+make</code></pre>
+
+<p>To have OPAM installed in a specific location, please do</p>
+<pre><code>./configure --prefix=/the/opam/path
+make</code></pre>
+
+<p>This will fetch the necessary archives if they are not already
+downloaded and then build OPAM. If you just want to get the necessary
+dependencies without compiling the project, run <code>make clone</code>.</p>
+<h4 id="BSDsystems">BSD systems</h4>
+
+<p>On *BSD systems, you need to use <code>gmake</code> instead of <code>make</code>. Moreover, the
+default path for installing the manual pages needs to be changed:</p>
+<pre><code>./configure --mandir /usr/local/man
+gmake</code></pre>
+
+<h3 id="InstallingOPAM_1">Installing OPAM</h3>
+
+<p>To install opam simply run:</p>
+<pre><code>sudo make install</code></pre>
+
+<p>OPAM will be installed under <code>$prefix</code>, that is under <code>/usr/local</code> if
+you did not specify a prefix in the configure phase, or whatever
+location you specified.</p>
+<h1 id="InitializingOPAM">Initializing OPAM</h1>
+
+<p>Before using OPAM, you need to initialize its state. Start by doing:</p>
+<pre><code>opam init
+eval `opam config env`</code></pre>
+
+<p>This will:</p>
+<ul><li><p>Create OPAM configuration files in <code>~/.opam</code></p>
+</li><li><p>Add the default remote repository at URL <code>http://opam.ocaml.org</code>
+ using opam’s HTTP repository backend.</p>
+</li><li><p>Update your local environment to be able to use OPAM packages and compilers.</p>
+</li></ul>
+
+<p>It is recommanded that you add <code>eval `opam config env` </code> in the
+configuration file of your shell (most likely <code>~/.bashrc</code> or
+<code>~/.profile</code>).</p>
+<p>To learn more about these two commands, try <code>opam init --help</code> and
+<code>opam config --help</code>.</p>
+<h3 id="UninstallingOPAM">Uninstalling OPAM</h3>
+
+<p>To uninstall OPAM, simply run:</p>
+<pre><code>$ make uninstall</code></pre>
+
+<p>at the root of the sources. Or you can simply remove OPAM binaries, manual pages and state:</p>
+<pre><code>$ rm -rf $(opam config var root)
+$ rm -f  $(which opam) $(which opam-admin)</code></pre>
+          </div>
+        </div>
+      
+
+    </div> 
+    </div> 
+
+    <div class="footer">
+    <div class="icons">
+    <div class="icon">
+      <a href="https://github.com/ocaml/opam2web">
+      <img src="../ext/img/github.png"/>
+      </a>
+    </div>
+    <div class="icon">
+      <a href="http://www.ocamlpro.com/">
+      <img src="../ext/img/ocamlpro.png"/>
+      </a>
+    </div>
+    <div class="icon">
+      <a href="http://www.ocaml.org/">
+      <img src="../ext/img/ocaml.png"/>
+      </a>
+    </div>
+    </div>
+    <div class="copyright">
+      <small>
+      Generated  
+      using <a href="http://github.com/ocaml/opam2web">opam2web</a>,
+      courtesy of <a href="http://ocamlpro.com">OCamlPro</a>.
+      <a href="http://opam.ocamlpro.com">Commercial support</a>.
+      </small>
+    </div>
+  </div>
+
+    
+    
+
+    <script src="/ext/js/google-code-prettify/prettify.js"> </script>
+     <script src="../ext/js/jquery.js"> </script>  <script src="../ext/js/site.js"> </script>  <script src="../ext/js/search.js"> </script> 
+    <script type="text/javascript">
+      var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-22552764-5']); _gaq.push(['_trackPageview']);
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+      </script>
+      
+    <script src="/ext/js/bootstrap.min.js"> </script>
+  </body>
+</html>

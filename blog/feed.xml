@@ -1,0 +1,7 @@
+
+  <feed xmlns="http://www.w3.org/2005/Atom">
+     
+     <id>http://hardpam.github.io/blog/</id><title>The OCaml Platform Blog</title><author><uri>http://hardpam.github.io</uri><name>The OCaml Platform Team</name></author><updated>1970-01-01T00:00:00Z</updated><link rel="self" href="http://hardpam.github.io/blog/feed.xml"/>
+     
+     
+  </feed>
